@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import "../less/postComponent.less";
+import Comment from './Comment';
 
 class PostComponent extends Component {
   render() {
     return (
-        <div className="post">这里是帖子区域</div>
+        <div className="post">
+          <Comment />
+        </div>
     );
   }
 }
