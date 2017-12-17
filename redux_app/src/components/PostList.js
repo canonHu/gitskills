@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '../less/postList.less';
 import { List, Avatar, Icon } from "antd";
+import * as api from '../api.js';
+
+api.getCategories();
 
 const listData = [];
 for (let i = 0; i < 5; i++) {
