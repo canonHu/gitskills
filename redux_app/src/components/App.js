@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.less';
-import PostList from "./components/PostList";
+import '../less/App.less';
+import PostList from "./PostList";
 
 class App extends Component {
   render() {

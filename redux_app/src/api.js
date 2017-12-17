@@ -1,5 +1,3 @@
-const api = 'localhost:3001';
-
 const headers = {
     'Authorization': 'whatever-you-want',
     'credentials': "same-origin"
