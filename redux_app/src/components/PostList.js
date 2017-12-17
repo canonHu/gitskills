@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../less/postList.less';
 import { List, Avatar, Icon } from "antd";
-import * as api from '../api.js';
+import * as api from '../utils/api.js';
 
 api.getCategories();
 
