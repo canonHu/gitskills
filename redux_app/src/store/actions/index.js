@@ -1,20 +1,37 @@
 export const ADD_POST = "ADD_POST";
 export const DELETE_POST = "DELETE_POST";
 
-const post = {
-  id: "",
-  time: new Date(),
-  title: "",
-  content: "",
-  author: "",
-  category: "",
-  voteScore: 0,
-  deleteType: false
-};
+// const actions = {
+//   addPost({
+//     id,
+//     time,
+//     title,
+//     content,
+//     author,
+//     category,
+//     voteScore,
+//     deleteType
+//   }) {
+//     return {
+//       ype: ADD_POST,
+//       id,
+//       time,
+//       title,
+//       content,
+//       author,
+//       category,
+//       voteScore,
+//       deleteType
+//     }
+//   }
+// };
 
 const actions = {
-  addPost(id) {
-      type: ADD_POST, id;
+  addPost(payload) {
+    return {
+      type: ADD_POST,
+      payload
+    };
   }
 };
 
