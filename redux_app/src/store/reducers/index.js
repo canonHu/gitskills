@@ -1,12 +1,9 @@
 import { combineReducers } from "redux";
-
-import {
-    ADD_POST
-} from "../actions";
+import * as types from "../constants/ActionTypes";
 
 function addPost(state = {}, action) {
     switch (action.type) {
-        case ADD_POST :
+        case types.ADD_POST :
             return action;
         default :
             return state;
