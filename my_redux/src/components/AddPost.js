@@ -14,27 +14,27 @@ class AddPost extends Component {
           <input />
         </div>
         <div>
-          <label>id：</label>
+          <label>title：</label>
           <input />
         </div>
         <div>
-          <label>id：</label>
+          <label>body：</label>
           <input />
         </div>
         <div>
-          <label>id：</label>
+          <label>author：</label>
           <input />
         </div>
         <div>
-          <label>id：</label>
+          <label>category：</label>
           <input />
         </div>
         <div>
-          <label>id：</label>
+          <label>voteScore：</label>
           <input />
         </div>
         <div>
-          <label>id：</label>
+          <label>deleted：</label>
           <input />
         </div>
       </div>;
