@@ -5,8 +5,8 @@ import {
   addTodo,
   completeTodo,
   setVisibilityFilter,
-  VisibilityFilters,
-  gstPosts
+  VisibilityFilters
+  
 } from "../actions/action";
 import AddTodo from "../components/AddTodo";
 import TodoList from "../components/TodoList";
@@ -32,7 +32,7 @@ class App extends Component {
             dispatch(setVisibilityFilter(nextFilter))
           }
         />
-        <AddPost onPostClick={text => dispatch(gstPosts(text))} />
+        <AddPost onPostClick={text => dispatch(addTodo(text))} />
       </div>
     );
   }

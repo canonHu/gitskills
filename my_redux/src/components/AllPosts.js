@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { gstPosts } from "../actions/action";
+import { getData } from "../actions/action";
 
 class Posts extends Component {
 
@@ -9,17 +9,18 @@ class Posts extends Component {
   }
 
   render() {
-    this.getHead();
+    console.log(this.props)
+    // this.getHead()
     return <div>4</div>;
   }
 }
 
 const mapStateToProps = state => ({
-  fullName: state.name
+  fullName: ''
 });
 
 const mapDispatchToProps = dispatch => ({
-  posts: data => dispatch(gstPosts(data))
+  posts: data => dispatch(getData(data))
 });
 
 export default connect(

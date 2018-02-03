@@ -21,16 +21,7 @@ function visibilityFilter(state = SHOW_ALL, action) {
 function posts(state = {}, action) {
   switch (action.type) {
     case POSTS:
-      return fetch("http://localhost:3001/categories", {
-        headers: {
-          Authorization: "whatever-you-want",
-          Accept: "application/json"
-        }
-      }).then(res => {
-        res.json().then((res) => {
-          return res;
-        })
-      });
+      return action.data;
       
     default:
       return state

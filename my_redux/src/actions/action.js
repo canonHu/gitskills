@@ -17,8 +17,25 @@ export const VisibilityFilters = {
  * action 创建函数
  */
 
- export function gstPosts(data) {
-   return { type: POSTS, data };
+ const getPosts = data => {
+   return {
+     type: POSTS,
+     data
+   }
+ }
+
+ export function getData(dispatch) {
+    fetch("http://localhost:3001/categories", {
+      headers: {
+        Authorization: "whatever-you-want",
+        Accept: "application/json"
+      }
+    }).then(data => {
+      dispatch(getPosts(data));
+      // res.json().then(res => {
+      //   return res;
+      // });
+    });
  }
 
 export function addTodo(text) {
