@@ -17,8 +17,8 @@ export const VisibilityFilters = {
  * action 创建函数
  */
 
- export function posts(text) {
-   return { type: POSTS, text };
+ export function gstPosts(data) {
+   return { type: POSTS, data };
  }
 
 export function addTodo(text) {

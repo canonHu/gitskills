@@ -1,27 +1,28 @@
 import React, { Component } from 'react'
-import PropTypes from "prop-types";
+import { connect } from 'react-redux';
+import { gstPosts } from "../actions/action";
 
 class Posts extends Component {
-  state = { head: [] };
-
-  componentWillMount() {
-    this.setState(state => {
-        head: this.getHead();
-    });
-  }
 
   getHead() {
-    this.props.getPosts();
+    this.props.posts();
   }
 
   render() {
-    console.log(this.getHead());
+    this.getHead();
     return <div>4</div>;
   }
 }
 
-export default Posts;
+const mapStateToProps = state => ({
+  fullName: state.name
+});
 
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired
-};
+const mapDispatchToProps = dispatch => ({
+  posts: data => dispatch(gstPosts(data))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Posts);
