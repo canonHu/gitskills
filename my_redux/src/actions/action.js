@@ -30,11 +30,11 @@ export const VisibilityFilters = {
         Authorization: "whatever-you-want",
         Accept: "application/json"
       }
-    }).then(data => {
-      dispatch(getPosts(data));
-      // res.json().then(res => {
-      //   return res;
-      // });
+    }).then(res => {
+      
+      res.json().then(res => {
+        dispatch(getPosts(res.categories));
+      });
     });
  }
 

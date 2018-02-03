@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 import { getData } from "../actions/action";
 
 class Posts extends Component {
+  componentDidMount() {
+    this.getHead()
+  }
 
   getHead() {
     this.props.posts();
   }
 
   render() {
-    console.log(this.props)
-    // this.getHead()
     return <div>4</div>;
   }
 }
@@ -20,7 +21,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  posts: data => dispatch(getData(data))
+  posts: data => getData(dispatch)
 });
 
 export default connect(
