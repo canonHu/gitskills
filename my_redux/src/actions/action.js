@@ -1,6 +1,7 @@
 export const ADD_TODO = "ADD_TODO";
 export const COMPLETE_TODO = "COMPLETE_TODO";
 export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
+export const POSTS = "POSTS";
 
 /*
  * 其它的常量
@@ -15,6 +16,10 @@ export const VisibilityFilters = {
 /*
  * action 创建函数
  */
+
+ export function posts(text) {
+   return { type: POSTS, text };
+ }
 
 export function addTodo(text) {
   return { type: ADD_TODO, text };

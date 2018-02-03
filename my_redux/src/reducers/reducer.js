@@ -3,8 +3,9 @@ import {
   ADD_TODO,
   COMPLETE_TODO,
   SET_VISIBILITY_FILTER,
-  VisibilityFilters
-} from '../actions/action';
+  VisibilityFilters,
+  POSTS
+} from "../actions/action";
 const { SHOW_ALL } = VisibilityFilters;
 
 function visibilityFilter(state = SHOW_ALL, action) {
@@ -13,6 +14,26 @@ function visibilityFilter(state = SHOW_ALL, action) {
       return action.filter;
     default:
       return state;
+  }
+}
+
+
+function posts(state = {}, action) {
+  switch (action.type) {
+    case POSTS:
+      return fetch("http://localhost:3001/categories", {
+        headers: {
+          Authorization: "whatever-you-want",
+          Accept: "application/json"
+        }
+      }).then(res => {
+        res.json().then((res) => {
+          return res;
+        })
+      });
+      
+    default:
+      return state
   }
 }
 
@@ -41,7 +62,8 @@ function todos(state = [], action) {
 
 const todoApp = combineReducers({
   visibilityFilter,
-  todos
+  todos,
+  posts
 });
 
 export default todoApp;

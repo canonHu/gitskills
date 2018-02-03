@@ -5,12 +5,14 @@ import {
   addTodo,
   completeTodo,
   setVisibilityFilter,
-  VisibilityFilters
+  VisibilityFilters,
+  posts
 } from "../actions/action";
 import AddTodo from "../components/AddTodo";
 import TodoList from "../components/TodoList";
 import Footer from "../components/Footer";
 import AddPost from "../components/AddPost";
+import AllPosts from "../components/AllPosts";
 
 class App extends Component {
   render() {
@@ -18,6 +20,7 @@ class App extends Component {
     const { dispatch, visibleTodos, visibilityFilter } = this.props;
     return (
       <div>
+        <AllPosts getPosts={() => dispatch(posts())} />
         <AddTodo onAddClick={text => dispatch(addTodo(text))} />
         <TodoList
           todos={visibleTodos}
@@ -29,7 +32,7 @@ class App extends Component {
             dispatch(setVisibilityFilter(nextFilter))
           }
         />
-        <AddPost />
+        <AddPost onPostClick={text => dispatch(posts(text))} />
       </div>
     );
   }

@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class AddPost extends Component {
+  handleClick(e) {
+    this.props.onPostClick('text');
+  }
 
-  render () {
-    return <div>
+  render() {
+    return (
+      <div>
         <div>
           <label>id：</label>
           <input />
@@ -37,8 +41,14 @@ class AddPost extends Component {
           <label>deleted：</label>
           <input />
         </div>
-      </div>;
+        <button onClick={e => this.handleClick(e)}>click</button>
+      </div>
+    );
   }
 }
 
 export default AddPost;
+
+AddPost.propTypes = {
+  onPostClick: PropTypes.func.isRequired
+};
