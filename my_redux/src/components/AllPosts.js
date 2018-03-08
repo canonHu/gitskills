@@ -12,12 +12,13 @@ class Posts extends Component {
   }
 
   render() {
+    console.log(this.props)
     return <div>4</div>;
   }
 }
 
 const mapStateToProps = state => ({
-  fullName: ''
+  state
 });
 
 const mapDispatchToProps = dispatch => ({
